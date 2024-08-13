@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ExamInASP.NET_MVC.Entities.Department>
+
+@{
+    ViewData["Title"] = "Departments";
+}
+
+<h1>Departments</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New Department</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Number of Employees</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.DepartmentName</td>
+                <td>@department.Location</td>
+                <td>@department.NumberOfPersonals</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Statistics" asp-route-id="@department.DepartmentId">Details</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@department.DepartmentId">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@department.DepartmentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-secondary" asp-controller="Employee" asp-action="Index">Go to Employees</a>
+</p>

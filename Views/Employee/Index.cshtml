@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ExamInASP.NET_MVC.Entities.Employee>
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h1>Employees</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Add New Employee</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Employee Code</th>
+            <th>Department</th>
+            <th>Rank</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.EmployeeCode</td>
+                <td>@employee.Department.DepartmentName</td>
+                <td>@employee.Rank</td>
+            </tr>
+        }
+    </tbody>
+</table>

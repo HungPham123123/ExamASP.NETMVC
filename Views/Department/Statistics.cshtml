@@ -1,0 +1,17 @@
+﻿@model ExamInASP.NET_MVC.Models.DepartmentStatisticsViewModel
+
+@{
+    ViewData["Title"] = "Department Statistics";
+}
+
+<h1>@Model.DepartmentName Statistics</h1>
+
+<div>
+    <h4>Number of Employees</h4>
+    <p>@Model.NumberOfEmployees</p>
+
+    <h4>Average Rank</h4>
+    <p>@Model.AverageRank</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

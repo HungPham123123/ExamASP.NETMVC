@@ -1,0 +1,24 @@
+﻿@model ExamInASP.NET_MVC.Entities.Department
+
+@{
+    ViewData["Title"] = "Delete Department";
+}
+
+<h1>Delete Department</h1>
+
+<h4>Department</h4>
+<hr />
+
+<p>Are you sure you want to delete this department?</p>
+
+<div>
+    <h4>@Model.DepartmentName.</h4>
+    <p><strong>Location:</strong> @Model.Location</p>
+    <p><strong>Number of Employees:</strong> @Model.NumberOfPersonals</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="DepartmentId" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
